@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@fontsource/plus-jakarta-sans/400.css';
+@import '@fontsource/plus-jakarta-sans/500.css';
+@import '@fontsource/plus-jakarta-sans/600.css';
+@import '@fontsource/plus-jakarta-sans/700.css';
+
+/* Healthcare Management System Design System */
+
+@layer base {
+  :root {
+    /* Background & Surfaces */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+    
+    /* Cards & Elevated Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+    
+    /* Primary - Medical Teal */
+    --primary: 174 72% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 174 65% 95%;
+    --primary-dark: 174 72% 30%;
+    
+    /* Secondary - Calm Blue */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 215 25% 25%;
+    
+    /* Muted */
+    --muted: 210 30% 95%;
+    --muted-foreground: 215 15% 50%;
+    
+    /* Accent - Warm Coral */
+    --accent: 12 80% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Status Colors */
+    --success: 152 60% 45%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 152 60% 95%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 38 92% 95%;
+    
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-light: 0 72% 95%;
+    
+    --info: 210 90% 55%;
+    --info-foreground: 0 0% 100%;
+    --info-light: 210 90% 95%;
+    
+    /* Borders & Inputs */
+    --border: 214 25% 90%;
+    --input: 214 25% 90%;
+    --ring: 174 72% 40%;
+    
+    --radius: 0.75rem;
+    
+    /* Sidebar */
+    --sidebar-background: 215 30% 12%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 174 72% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 30% 18%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 215 25% 20%;
+    --sidebar-ring: 174 72% 50%;
+    --sidebar-muted: 215 20% 60%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(174 72% 40%) 0%, hsl(190 70% 45%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(12 80% 60%) 0%, hsl(25 85% 55%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(152 60% 45%) 0%, hsl(165 55% 50%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
+    --gradient-sidebar: linear-gradient(180deg, hsl(215 30% 12%) 0%, hsl(215 35% 8%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(215 25% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(215 25% 15% / 0.08), 0 2px 4px -1px hsl(215 25% 15% / 0.04);
+    --shadow-lg: 0 10px 15px -3px hsl(215 25% 15% / 0.08), 0 4px 6px -2px hsl(215 25% 15% / 0.04);
+    --shadow-xl: 0 20px 25px -5px hsl(215 25% 15% / 0.1), 0 10px 10px -5px hsl(215 25% 15% / 0.04);
+    --shadow-primary: 0 4px 14px 0 hsl(174 72% 40% / 0.25);
+    --shadow-accent: 0 4px 14px 0 hsl(12 80% 60% / 0.25);
+  }
+
+  .dark {
+    --background: 215 30% 8%;
+    --foreground: 210 20% 95%;
+    
+    --card: 215 30% 12%;
+    --card-foreground: 210 20% 95%;
+    
+    --popover: 215 30% 12%;
+    --popover-foreground: 210 20% 95%;
+    
+    --primary: 174 65% 50%;
+    --primary-foreground: 215 30% 8%;
+    --primary-light: 174 65% 15%;
+    --primary-dark: 174 65% 60%;
+    
+    --secondary: 215 25% 18%;
+    --secondary-foreground: 210 20% 90%;
+    
+    --muted: 215 25% 15%;
+    --muted-foreground: 215 15% 60%;
+    
+    --accent: 12 75% 55%;
+    --accent-foreground: 0 0% 100%;
+    
+    --success: 152 55% 50%;
+    --success-light: 152 55% 15%;
+    
+    --warning: 38 85% 55%;
+    --warning-light: 38 85% 15%;
+    
+    --destructive: 0 65% 50%;
+    --destructive-light: 0 65% 15%;
+    
+    --info: 210 85% 60%;
+    --info-light: 210 85% 15%;
+    
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 174 65% 50%;
+    
+    --sidebar-background: 215 35% 6%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-accent: 215 30% 12%;
+    --sidebar-border: 215 25% 15%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .gradient-sidebar {
+    background: var(--gradient-sidebar);
+  }
+  
+  .shadow-primary {
+    box-shadow: var(--shadow-primary);
+  }
+  
+  .shadow-accent {
+    box-shadow: var(--shadow-accent);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out;
+  }
+  
+  .animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
